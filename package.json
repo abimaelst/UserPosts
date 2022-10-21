@@ -1,0 +1,15 @@
+{
+  "name": "userinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./index.html"
+  },
+  "author": "abimael tavares",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.8.4"
+  }
+}
