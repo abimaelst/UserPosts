@@ -2,14 +2,20 @@
   "name": "userinfo",
   "version": "1.0.0",
   "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel ./index.html"
+    "dev": "npx parcel ./src/index.html"
   },
   "author": "abimael tavares",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
+    "@parcel/transformer-sass": "^2.7.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "buffer": "^6.0.3",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
     "typescript": "^4.8.4"
   },
   "dependencies": {

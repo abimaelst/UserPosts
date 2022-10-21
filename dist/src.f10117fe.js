@@ -5515,6 +5515,7 @@ var Letter = /** @class */function () {
             PostsData = _a.sent().data;
             addPostsInUsers = UsersData.map(function (user) {
               return __assign(__assign({}, user), {
+                phone: user.phone.replace(/\ +.*$/, ''),
                 company: user.company.name,
                 address: "".concat(user.address.street, ", ").concat(user.address.suite, ", ").concat(user.address.zipcode, ", ").concat(user.address.city),
                 posts: PostsData.filter(function (post) {
@@ -5729,7 +5730,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64870" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49702" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

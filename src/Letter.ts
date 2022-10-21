@@ -1,50 +1,5 @@
-import axios, {Axios, AxiosInstance} from "axios";
-
-interface Company {
-    bs: string
-    catchPhrase: string
-    name:string
-}
-
-interface Address {
-    city: string
-    geo: { lat: number, lng: number }
-    street: string
-    suite: string
-    zipcode: string
-}
-
-interface User {
-    "id": number,
-    "name": string,
-    "username": string,
-    "email": string,
-    "address": Address,
-    "phone": string,
-    "website": string,
-    "company": Company,
-}
-
-interface Post {
-    userId: number
-    "id": number
-    "title": string
-    "body": string
-}
-
-export interface LocalPost {
-    "id": number
-    "title": string
-    "body": string
-}
-
-type newUser = Omit<User, 'company' | 'address'>
-
-export interface UserData extends newUser{
-    "company": string,
-    "address": string
-    "posts": LocalPost[]
-}
+import axios, {AxiosInstance} from "axios";
+import {Post, User, UserData} from "./models";
 
 export class Letter {
     clientHTTP: AxiosInstance
@@ -64,6 +19,7 @@ export class Letter {
         const addPostsInUsers = UsersData.map((user):UserData => {
             return {
                 ...user,
+                phone: user.phone.replace(/\ +.*$/, ''),
                 company: user.company.name,
                 address: `${user.address.street}, ${user.address.suite}, ${user.address.zipcode}, ${user.address.city}`,
                 posts: PostsData.filter((post) => post.userId === user.id).map((post) => {

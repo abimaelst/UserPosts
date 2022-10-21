@@ -1,0 +1,15 @@
+.post {
+  background: var(--gray-800);
+  border-radius: 8px;
+  padding: 2.5rem;
+
+  &+.post {
+    margin-top: 2rem;
+  }
+
+  &>header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
