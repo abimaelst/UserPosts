@@ -5519,6 +5519,12 @@ var Letter = /** @class */function () {
                 address: "".concat(user.address.street, ", ").concat(user.address.suite, ", ").concat(user.address.zipcode, ", ").concat(user.address.city),
                 posts: PostsData.filter(function (post) {
                   return post.userId === user.id;
+                }).map(function (post) {
+                  return {
+                    id: post.id,
+                    title: post.title,
+                    body: post.body
+                  };
                 })
               });
             });
@@ -5686,11 +5692,17 @@ var beforeMount = function getData() {
 
 window.onload = function () {
   var postsContainer = document.querySelector('#posts');
-  var postsHTML = postsData.reduce(function (acc, author) {
-    acc += " <article class=\"post\">\n      <header>\n        <div class=\"author\">\n         \n          <div class=\"authorInfo\">\n            <strong>".concat(author.name, "</strong>\n            <span>").concat(author.company, "</div>\n        </div>\n      </header>\n\n      <div class=\"content\">\n        \n      </div>\n      <div class=\"commentList\">\n        \n      </div>\n    </article>");
+  var posts = function posts(_posts) {
+    return _posts.reduce(function (acc, post) {
+      acc += "\n            <div class=\"comment\">\n      <div class=\"commentBox\">\n        <div class=\"commentContent\">\n          <header>\n            <div class=\"authorAndTime\">\n              <strong>".concat(post.title, "</strong>\n            </div>\n          </header>\n          <p>").concat(post.body, "</p>\n        </div>\n      </div>\n    </div>\n        ");
+      return acc;
+    }, '');
+  };
+  var UsersHTML = postsData.reduce(function (acc, author) {
+    acc += " <article class=\"post\">\n      <header>\n        <span class=\"author\">\n         <img\n      src='https://source.unsplash.com/420x200/?person'\n      alt=\"avatar image\"\n      class=\"avatarWithBorder\"\n    />\n          <div class=\"authorInfo\">\n            <strong>".concat(author.username, "</strong>\n            <a href=\"mailto:").concat(author.email, "\">").concat(author.email, "</a>\n            <a href=\"tel:").concat(author.phone, "\">").concat(author.phone, "</a>\n            <a href=\"http://www.").concat(author.website, "\" target=\"_blank\">").concat(author.website, "</a>\n        </div>\n      </header>\n\n      <div class=\"content\">\n         <title>Posts</title>\n        ").concat(posts(author.posts), "\n      </div>\n    </article>");
     return acc;
   }, '');
-  postsContainer.innerHTML = postsHTML;
+  postsContainer.innerHTML = UsersHTML;
 };
 },{"./Letter":"src/Letter.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -5717,7 +5729,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49892" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64870" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

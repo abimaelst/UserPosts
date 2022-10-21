@@ -32,12 +32,18 @@ interface Post {
     "body": string
 }
 
+export interface LocalPost {
+    "id": number
+    "title": string
+    "body": string
+}
+
 type newUser = Omit<User, 'company' | 'address'>
 
 export interface UserData extends newUser{
     "company": string,
     "address": string
-    "posts": Post[]
+    "posts": LocalPost[]
 }
 
 export class Letter {
@@ -60,7 +66,13 @@ export class Letter {
                 ...user,
                 company: user.company.name,
                 address: `${user.address.street}, ${user.address.suite}, ${user.address.zipcode}, ${user.address.city}`,
-                posts: PostsData.filter((post) => post.userId === user.id)
+                posts: PostsData.filter((post) => post.userId === user.id).map((post) => {
+                    return {
+                        id: post.id,
+                        title: post.title,
+                        body: post.body
+                    }
+                })
             }
         })
 

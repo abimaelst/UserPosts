@@ -1,4 +1,4 @@
-import {Letter, UserData} from "./Letter";
+import {Letter, LocalPost, UserData} from "./Letter";
 
 const api = new Letter('https://jsonplaceholder.typicode.com/')
 
@@ -12,28 +12,53 @@ const beforeMount = (async function getData() {
 
 window.onload = () => {
  const postsContainer = document.querySelector('#posts')
- const postsHTML = postsData.reduce((acc, author) => {
+
+ const posts = (posts: LocalPost[]) => {
+    return posts.reduce((acc, post) => {
+        acc += `
+            <div class="comment">
+      <div class="commentBox">
+        <div class="commentContent">
+          <header>
+            <div class="authorAndTime">
+              <strong>${post.title}</strong>
+            </div>
+          </header>
+          <p>${post.body}</p>
+        </div>
+      </div>
+    </div>
+        `
+        return acc
+     }, '')
+ }
+
+ const UsersHTML = postsData.reduce((acc, author) => {
      acc += ` <article class="post">
       <header>
-        <div class="author">
-         
+        <span class="author">
+         <img
+      src='https://source.unsplash.com/420x200/?person'
+      alt="avatar image"
+      class="avatarWithBorder"
+    />
           <div class="authorInfo">
-            <strong>${author.name}</strong>
-            <span>${author.company}</div>
+            <strong>${author.username}</strong>
+            <a href="mailto:${author.email}">${author.email}</a>
+            <a href="tel:${author.phone}">${author.phone}</a>
+            <a href="http://www.${author.website}" target="_blank">${author.website}</a>
         </div>
       </header>
 
       <div class="content">
-        
-      </div>
-      <div class="commentList">
-        
+         <title>Posts</title>
+        ${posts(author.posts)}
       </div>
     </article>`
      return acc
  }, '')
 
 
- postsContainer.innerHTML = postsHTML
+ postsContainer.innerHTML = UsersHTML
 
 }
