@@ -5353,9 +5353,21 @@ exports.AxiosError = AxiosError;
 exports.Axios = Axios;
 var _default = _axios.default;
 exports.default = _default;
-},{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"src/Api.ts":[function(require,module,exports) {
+},{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"src/Letter.ts":[function(require,module,exports) {
 "use strict";
 
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
 var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
   function adopt(value) {
     return value instanceof P ? value : new P(function (resolve) {
@@ -5481,34 +5493,45 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Api = void 0;
+exports.Letter = void 0;
 var axios_1 = __importDefault(require("axios"));
-var Api = /** @class */function () {
-  function Api(baseURL) {
+var Letter = /** @class */function () {
+  function Letter(baseURL) {
     this.clientHTTP = axios_1.default.create({
       baseURL: baseURL
     });
   }
-  Api.prototype.get = function (endPoint) {
+  Letter.prototype.get = function () {
     return __awaiter(this, void 0, void 0, function () {
-      var res;
+      var UsersData, PostsData, addPostsInUsers;
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            return [4 /*yield*/, this.clientHTTP.get(endPoint)];
+            return [4 /*yield*/, this.clientHTTP.get('users')];
           case 1:
-            res = _a.sent();
+            UsersData = _a.sent().data;
+            return [4 /*yield*/, this.clientHTTP.get('posts')];
+          case 2:
+            PostsData = _a.sent().data;
+            addPostsInUsers = UsersData.map(function (user) {
+              return __assign(__assign({}, user), {
+                company: user.company.name,
+                address: "".concat(user.address.street, ", ").concat(user.address.suite, ", ").concat(user.address.zipcode, ", ").concat(user.address.city),
+                posts: PostsData.filter(function (post) {
+                  return post.userId === user.id;
+                })
+              });
+            });
             return [2 /*return*/, {
-              status: res.status,
-              data: res.data
+              data: addPostsInUsers
             }];
         }
       });
     });
   };
-  return Api;
+  return Letter;
 }();
-exports.Api = Api;
+exports.Letter = Letter;
 },{"axios":"node_modules/axios/index.js"}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -5629,31 +5652,47 @@ var __generator = this && this.__generator || function (thisArg, body) {
     };
   }
 };
+var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var Api_1 = require("./Api");
-var api = new Api_1.Api('https://jsonplaceholder.typicode.com/');
+var Letter_1 = require("./Letter");
+var api = new Letter_1.Letter('https://jsonplaceholder.typicode.com/');
+var postsData = [];
 // @ts-ignore
-function data() {
-  return __awaiter(this, void 0, Promise, function () {
-    var show;
+var beforeMount = function getData() {
+  return __awaiter(this, void 0, void 0, function () {
+    var data;
     return __generator(this, function (_a) {
       switch (_a.label) {
         case 0:
-          return [4 /*yield*/, api.get('posts')];
+          return [4 /*yield*/, api.get()];
         case 1:
-          show = _a.sent();
-          console.log(show);
+          data = _a.sent().data;
+          postsData.splice.apply(postsData, __spreadArray([0, postsData.length], data, false));
           return [2 /*return*/];
       }
     });
   });
-}
+}();
 
-data();
-window.onload = function () {};
-},{"./Api":"src/Api.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+window.onload = function () {
+  var postsContainer = document.querySelector('#posts');
+  var postsHTML = postsData.reduce(function (acc, author) {
+    acc += " <article class=\"post\">\n      <header>\n        <div class=\"author\">\n         \n          <div class=\"authorInfo\">\n            <strong>".concat(author.name, "</strong>\n            <span>").concat(author.company, "</div>\n        </div>\n      </header>\n\n      <div class=\"content\">\n        \n      </div>\n      <div class=\"commentList\">\n        \n      </div>\n    </article>");
+    return acc;
+  }, '');
+  postsContainer.innerHTML = postsHTML;
+};
+},{"./Letter":"src/Letter.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -5678,7 +5717,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50762" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49892" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
