@@ -1,3 +1,4 @@
+import { SearchBar } from "./components/searchBar";
 import { UsersProfile } from "./components/usersProfile";
 
 import "./css/global.scss";
@@ -20,6 +21,7 @@ window.onload = () => {
   `;
   UsersProfile().then((res) => {
     setTimeout(() => {
+      SearchBar();
       postsContainer.innerHTML = res;
     }, 1000);
   });

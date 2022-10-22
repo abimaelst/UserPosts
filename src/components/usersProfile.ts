@@ -10,9 +10,13 @@ async function getData(): Promise<UserData[]> {
   return data;
 }
 
-export const UsersProfile = async () =>
-  (await getData()).reduce((acc, author) => {
-    acc += ` 
+export const UsersProfile = async (search: string = "") =>
+  (await getData())
+    .filter((item) =>
+      item.username.toLowerCase().includes(search.toLowerCase())
+    )
+    .reduce((acc, author) => {
+      acc += ` 
       <article class="post">
         <header>
           <span class="author">
@@ -36,5 +40,5 @@ export const UsersProfile = async () =>
         </div>
       </article>
     `;
-    return acc;
-  }, "");
+      return acc;
+    }, "");
