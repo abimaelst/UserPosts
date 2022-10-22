@@ -1,6 +1,8 @@
 # Focus Time Mobile
 
-Focus Time is an app mobile for focusing using Pomodoro's technique.
+The Users Post is a exercice project to demostrate my skills about javascript vanilla, unit test and how we can make an nice enverioment to production, because that I don't use a framework like, react, vue or angular.
+
+I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
 
 ## Tech
 
@@ -9,10 +11,6 @@ Focus Time is an app mobile for focusing using Pomodoro's technique.
 - [SCSS](https://reactnative.dev/)
 - [Parcel V2](https://parceljs.org/blog/v2/)
 - [Jest](https://jestjs.io/)
-
-## About Project
-I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
-The object is not use a framework, I choose the hardest way to show all my skills about javascript vanilla and unit tests.
 
 ## Installation
 
