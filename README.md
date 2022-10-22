@@ -36,11 +36,12 @@ npm run ci
 
 ## Test Coverage
 
+![Screen Shot 2022-10-22 at 7 34 40 AM](https://user-images.githubusercontent.com/49216154/197334567-7ab69992-7244-41dd-8953-77054297f196.png)
+
 ## Example
 
-![Screen Shot 2022-08-07 at 10 58 44](https://user-images.githubusercontent.com/49216154/183294380-e86dbf9a-e3af-4cde-9320-efd28a827678.png)
+![Screen Shot 2022-10-22 at 7 33 44 AM](https://user-images.githubusercontent.com/49216154/197334531-ad1ccb18-afa4-4857-83fe-44c6ba11aad6.png)
 
-![Screen Shot 2022-08-07 at 11 00 12](https://user-images.githubusercontent.com/49216154/183294454-470e2f63-d116-4e7a-be4e-26790f387c03.png)
 
 
 ## About Project
