@@ -17,7 +17,10 @@
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(css|scss)$": "<rootDir>/src/Letter.ts"
-    }
+    },
+    "testPathIgnorePatterns" : [
+      "<rootDir>/src/models"
+    ]
   },
   "author": "abimael tavares",
   "license": "ISC",

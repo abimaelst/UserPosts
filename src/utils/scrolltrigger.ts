@@ -14,6 +14,6 @@ const addObserver = (el: HTMLElement, options) => {
         observer.unobserve(entry.target);
       }
     });
-  }, options); // Passing the options object to the observer
+  }, options);
   observer.observe(el);
 };

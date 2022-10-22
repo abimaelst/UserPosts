@@ -21,8 +21,10 @@ window.onload = () => {
     </div>
   `;
   UsersProfile().then((res) => {
-    SearchBar();
-    postsContainer.innerHTML = res;
-    scrollTrigger(".scroll-reveal", { rootMargin: "-126px" });
+    setTimeout(() => {
+      SearchBar();
+      postsContainer.innerHTML = res;
+      scrollTrigger(".scroll-reveal", { rootMargin: "-126px" });
+    }, 600);
   });
 };
