@@ -34,13 +34,28 @@ How to generate final version to production.
 
 ```bash
 npm run ci
+npm run serve
+```
+
+To stop the serve
+```bash
+npm run server:stop
+```
+
+## Test
+
+How to generate final version to production.
+
+```bash
+npm run test or npm run test:coverage
 ```
 
 ## Test Coverage
 
-![Screen Shot 2022-10-22 at 7 34 40 AM](https://user-images.githubusercontent.com/49216154/197334567-7ab69992-7244-41dd-8953-77054297f196.png)
+![Screen Shot 2022-10-22 at 3 32 32 PM](https://user-images.githubusercontent.com/49216154/197357148-7c5380ff-0e4e-4d07-8beb-43e0b64ba189.png)
 
 ## Example
 
-![Screen Shot 2022-10-22 at 7 33 44 AM](https://user-images.githubusercontent.com/49216154/197334531-ad1ccb18-afa4-4857-83fe-44c6ba11aad6.png)
+![Screen Shot 2022-10-22 at 3 28 55 PM](https://user-images.githubusercontent.com/49216154/197357036-c5c6ff73-f0c8-4a6e-8399-4161b1db8181.png)
+
 
