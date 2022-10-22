@@ -52,10 +52,10 @@ npm run test or npm run test:coverage
 
 ## Test Coverage
 
-![Screen Shot 2022-10-22 at 3 32 32 PM](https://user-images.githubusercontent.com/49216154/197357148-7c5380ff-0e4e-4d07-8beb-43e0b64ba189.png)
+![Screen Shot 2022-10-22 at 8 36 47 PM](https://user-images.githubusercontent.com/49216154/197366271-50b88385-33ca-4143-8d5d-90cebd4f82a4.png)
 
 ## Example
 
-![Screen Shot 2022-10-22 at 3 28 55 PM](https://user-images.githubusercontent.com/49216154/197357036-c5c6ff73-f0c8-4a6e-8399-4161b1db8181.png)
+
 
 
