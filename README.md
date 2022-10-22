@@ -2,7 +2,7 @@
 
 The Users Post is a project exercice to demostrate my skills in javascript vanilla, unit test and server to production. Howerver, I not use a framework like react, vue or angular, just vanilla JS.
 
-I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
+I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to build this application.
 
 ## Tech
 
