@@ -2,6 +2,12 @@
   background: var(--gray-800);
   border-radius: 8px;
   padding: 2.5rem;
+  transition: transform 0.5s, opacity 0.5s;
+
+  &.right{
+    transform: translateX(200px);
+    opacity: 0;
+  }
 
   &+.post {
     margin-top: 2rem;
@@ -11,6 +17,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &.active{
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -25,6 +36,8 @@
     border-radius: 8px;
   }
 }
+
+
 
 .postsContent {
   background: var(--gray-700);

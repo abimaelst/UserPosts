@@ -17,7 +17,7 @@ export const UsersProfile = async (search: string = "") =>
     )
     .reduce((acc, author) => {
       acc += ` 
-      <article class="post">
+      <article class="post scroll-reveal right">
         <header>
           <span class="author">
             <img

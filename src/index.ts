@@ -3,6 +3,7 @@ import { UsersProfile } from "./components/usersProfile";
 
 import "./css/global.scss";
 import "./css/loading.scss";
+import { scrollTrigger } from "./utils/scrolltrigger";
 
 window.onload = () => {
   const postsContainer = document.querySelector("#posts");
@@ -20,9 +21,8 @@ window.onload = () => {
     </div>
   `;
   UsersProfile().then((res) => {
-    setTimeout(() => {
-      SearchBar();
-      postsContainer.innerHTML = res;
-    }, 1000);
+    SearchBar();
+    postsContainer.innerHTML = res;
+    scrollTrigger(".scroll-reveal", { rootMargin: "-126px" });
   });
 };
