@@ -13,3 +13,32 @@
     justify-content: space-between;
   }
 }
+
+.posts {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+
+  &>img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+  }
+}
+
+.postsContent {
+  background: var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: var(--gray-300);
+  }
+}

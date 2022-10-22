@@ -4,9 +4,9 @@ import "../css/post.scss";
 export const Posts = (posts: LocalPost[]) => {
   return posts.reduce((acc, post) => {
     acc += `
-      <div class="comment">
-        <div class="commentBox">
-          <div class="commentContent">
+      <div class="posts">
+        <div class="postsBox">
+          <div class="postsContent">
             <header>
               <div class="authorAndTime">
                 <strong>${post.title}</strong>
