@@ -1,6 +1,6 @@
-# Focus Time Mobile
+# Users Letters
 
-The Users Post is a exercice project to demostrate my skills about javascript vanilla, unit test and how we can make an nice enverioment to production, because that I don't use a framework like, react, vue or angular.
+The Users Post is a project exercice to demostrate my skills in javascript vanilla, unit test and server to production. Howerver, I not use a framework like react, vue or angular, just vanilla JS.
 
 I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
 
@@ -37,7 +37,7 @@ npm run ci
 npm run serve
 ```
 
-To stop the serve
+To stop the server
 ```bash
 npm run server:stop
 ```
