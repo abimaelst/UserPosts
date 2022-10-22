@@ -10,6 +10,10 @@ Focus Time is an app mobile for focusing using Pomodoro's technique.
 - [Parcel V2](https://parceljs.org/blog/v2/)
 - [Jest](https://jestjs.io/)
 
+## About Project
+I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
+The object is not use a framework, I choose the hardest way to show all my skills about javascript vanilla and unit tests.
+
 ## Installation
 
 Use [npm](https://www.npmjs.com/) to install dependencies.
@@ -41,10 +45,4 @@ npm run ci
 ## Example
 
 ![Screen Shot 2022-10-22 at 7 33 44 AM](https://user-images.githubusercontent.com/49216154/197334531-ad1ccb18-afa4-4857-83fe-44c6ba11aad6.png)
-
-
-
-## About Project
-I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
-The object is not use a framework, I choose the hardest way to show all my skills about javascript vanilla and unit tests.
 
