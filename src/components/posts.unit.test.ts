@@ -12,9 +12,9 @@ describe("Letter", () => {
 
     const mockPosts = POSTS.reduce((acc, curr) => {
       acc += `
-      <div class="comment">
-        <div class="commentBox">
-          <div class="commentContent">
+      <div class="posts">
+        <div class="postsBox">
+          <div class="postsContent">
             <header>
               <div class="authorAndTime">
                 <strong>${curr.title}</strong>
