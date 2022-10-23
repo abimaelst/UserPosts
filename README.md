@@ -44,7 +44,7 @@ npm run server:stop
 
 ## Test
 
-How to generate final version to production.
+How to test the application.
 
 ```bash
 npm run test or npm run test:coverage
