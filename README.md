@@ -57,5 +57,6 @@ npm run test or npm run test:coverage
 ## Example
 
 
+![Users Posts - 22 October 2022](https://user-images.githubusercontent.com/49216154/197367112-0ba498bc-d19c-447c-acec-9e9c8d2e7a9b.gif)
 
 
