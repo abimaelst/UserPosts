@@ -1,8 +1,8 @@
-# Focus Time Mobile
+# Users Letters
 
-The Users Post is a exercice project to demostrate my skills about javascript vanilla, unit test and how we can make an nice enverioment to production, because that I don't use a framework like, react, vue or angular.
+The Users Post is a project exercice to demostrate my skills in javascript vanilla, unit test and server to production. Howerver, I not use a framework like react, vue or angular, just vanilla JS.
 
-I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to shows the users posts.
+I was working in two end point [users](https://jsonplaceholder.typicode.com/users) and [posts](https://jsonplaceholder.typicode.com/) to build this application.
 
 ## Tech
 
@@ -34,13 +34,28 @@ How to generate final version to production.
 
 ```bash
 npm run ci
+npm run serve
+```
+
+To stop the server
+```bash
+npm run server:stop
+```
+
+## Test
+
+How to generate final version to production.
+
+```bash
+npm run test or npm run test:coverage
 ```
 
 ## Test Coverage
 
-![Screen Shot 2022-10-22 at 7 34 40 AM](https://user-images.githubusercontent.com/49216154/197334567-7ab69992-7244-41dd-8953-77054297f196.png)
+![Screen Shot 2022-10-22 at 8 36 47 PM](https://user-images.githubusercontent.com/49216154/197366271-50b88385-33ca-4143-8d5d-90cebd4f82a4.png)
 
 ## Example
 
-![Screen Shot 2022-10-22 at 7 33 44 AM](https://user-images.githubusercontent.com/49216154/197334531-ad1ccb18-afa4-4857-83fe-44c6ba11aad6.png)
+
+
 

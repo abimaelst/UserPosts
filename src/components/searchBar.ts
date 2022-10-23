@@ -1,3 +1,4 @@
+import { scrollTrigger } from "../utils/scrolltrigger";
 import { UsersProfile } from "./usersProfile";
 
 export const SearchBar = () => {
@@ -22,6 +23,7 @@ export const SearchBar = () => {
 
     UsersProfile(search).then((res) => {
       postsContainer.innerHTML = res;
+      scrollTrigger(".scroll-reveal", { rootMargin: "0px" });
     });
   };
   searchForm.addEventListener("submit", handleSubmit);
